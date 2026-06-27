@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Algo Trading
+
+A professional-grade algorithmic trading terminal built on Next.js — real-time market data, 3D order book visualization, full technical indicator suite, and a keyboard-driven terminal UI. Connects to Alpaca Markets for paper and live trading.
+
+## What This Is
+
+Algo Trading is a self-hosted trading desk. It streams live market data over WebSocket (handled in a Web Worker so the UI never blocks), renders a 3D order book using Three.js, and gives you a full set of technical indicators on TradingView-style charts. Everything is keyboard-driven with a global hotkey system and designed for dark-mode-first extended use.
+
+## Features
+
+- Real-time market data via Alpaca Markets WebSocket
+- Paper trading and live order execution
+- 3D order book visualization (Three.js + React Three Fiber)
+- Technical indicators: SMA, EMA, RSI, MACD, Bollinger Bands, VWAP
+- TradingView-style charting (Lightweight Charts)
+- Global hotkey system for keyboard-driven trading
+- Price alerts with toast notifications
+- News feed integration
+- Resizable panel layout
+- Web Worker architecture — WebSocket off the main thread
+
+## Stack
+
+| Layer | Tech |
+|-------|------|
+| Framework | Next.js 16 |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Components | shadcn/ui (Radix) |
+| State | Zustand |
+| 2D Charts | Lightweight Charts 5 (TradingView) |
+| 3D Graphics | Three.js + React Three Fiber |
+| Market Data | Alpaca Markets API |
+| Notifications | Sonner |
 
 ## Getting Started
 
-First, run the development server:
+Requires Node.js 18+ and a free [Alpaca Markets](https://alpaca.markets) account. Paper trading is available with no real money required.
 
 ```bash
+npm install
+cp .env.local.example .env.local
+# Add ALPACA_API_KEY and ALPACA_SECRET_KEY
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
